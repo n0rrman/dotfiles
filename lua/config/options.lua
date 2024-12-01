@@ -25,6 +25,7 @@ vim.opt.foldlevelstart = 99     -- Start with max fold level.
 
 
 -- UI
+vim.opt.statuscolumn = "%s%l|%r "
 vim.opt.showmode = false        -- Hide mode from status bar
 vim.opt.laststatus = 0          -- Remove status from status bar 
 vim.opt.cursorline = true       -- Draws horizontal line on active line.
