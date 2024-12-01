@@ -25,6 +25,8 @@ vim.opt.foldlevelstart = 99     -- Start with max fold level.
 
 
 -- UI
+vim.opt.showmode = false        -- Hide mode from status bar
+vim.opt.laststatus = 0          -- Remove status from status bar 
 vim.opt.cursorline = true       -- Draws horizontal line on active line.
 vim.opt.wildmenu = true         -- Display command line complete option menu.
 vim.opt.showcmd = true          -- Show inserted command.
