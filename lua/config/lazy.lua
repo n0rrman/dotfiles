@@ -21,3 +21,5 @@ require("lazy").setup({
   install = { colorscheme = { "gruvbox" } },
   checker = { enabled = true },
 })
+
+require('telescope').load_extension('fzf')

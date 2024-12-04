@@ -1,5 +1,6 @@
 return { 
     'mrjones2014/smart-splits.nvim',
+    enabled = true,
     config = function() require("smart-splits").setup()
         local ss = require("smart-splits")
         vim.keymap.set('n', '<C-h>', ss.move_cursor_left)
