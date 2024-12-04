@@ -42,7 +42,7 @@ require("mason-lspconfig").setup({
 			require("lspconfig")[server_name].setup({})
 		end,
 	},
-	ensure_installed = { "lua_ls" },
+	ensure_installed = { "lua_ls", "angular_ls" },
 })
 require("mason-conform").setup({
     ensure_installed = {
@@ -57,7 +57,7 @@ require("mason-conform").setup({
 })
 require("mason-nvim-lint").setup({
     ensure_installed = {
-       "pylint" 
+       "pylint", "eslint_d" 
     },
     ignore_install = { "janet", "inko", "ruby", "clj-kondo" }
 })
@@ -145,3 +145,10 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+
+local opts = { noremap = true, silent = true }
+local ng = require("ng");
+vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
