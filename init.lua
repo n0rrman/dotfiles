@@ -20,7 +20,7 @@ lspconfig_defaults.capabilities =
 -- This is where you enable features that only work
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd("LspAttach", {
-    desc = "LSP actions",
+	desc = "LSP actions",
 	callback = function(event)
 		local opts = { buffer = event.buf }
 		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
@@ -42,24 +42,30 @@ require("mason-lspconfig").setup({
 			require("lspconfig")[server_name].setup({})
 		end,
 	},
-	ensure_installed = { "lua_ls", "angular_ls" },
+	ensure_installed = { "lua_ls", "angularls" },
 })
 require("mason-conform").setup({
-    ensure_installed = {
-            "eslint_d",    -- Linter for JavaScript/TypeScript
-    "prettier",    -- Code formatter for JS/TS/HTML/CSS
-    "black",       -- Python code formatter
-    "flake8",      -- Python linter
-    "stylua",      -- Lua formatter
-    "rustfmt",     -- Rust formatter
-    "gofmt",       -- Go formatter
-    }
+	ensure_installed = {
+		"eslint_d", -- Linter for JavaScript/TypeScript
+		"prettier", -- Code formatter for JS/TS/HTML/CSS
+		"black", -- Python code formatter
+		"flake8", -- Python linter
+		"stylua", -- Lua formatter
+		"rustfmt", -- Rust formatter
+		"gofmt", -- Go formatter
+	},
 })
 require("mason-nvim-lint").setup({
-    ensure_installed = {
-       "pylint", "eslint_d" 
-    },
-    ignore_install = { "janet", "inko", "ruby", "clj-kondo" }
+	ensure_installed = {
+		"pylint",
+		"eslint_d",
+	},
+	ignore_install = {
+		"janet",
+		"inko",
+		"ruby",
+		"clj-kondo",
+	},
 })
 
 local cmp = require("cmp")
@@ -104,51 +110,60 @@ vim.api.nvim_create_user_command("Format", function(args)
 end, { range = true })
 
 require("scrollbar").setup()
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    always_show_tabline = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 100,
-      tabline = 100,
-      winbar = 100,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
-
+require("lualine").setup({
+	options = {
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		always_show_tabline = true,
+		globalstatus = false,
+		refresh = {
+			statusline = 100,
+			tabline = 100,
+			winbar = 100,
+		},
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	winbar = {},
+	inactive_winbar = {},
+	extensions = {},
+})
 
 local opts = { noremap = true, silent = true }
-local ng = require("ng");
+local ng = require("ng")
 vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
 vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
 vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
+
+
+vim.keymap.set("n", "<leader>gk", "<cmd>DiffviewOpen<cr>", opts)
+vim.keymap.set("n", "<leader>gj", "<cmd>DiffviewClose<cr>", opts)
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", opts)
+
+
+
+
+
