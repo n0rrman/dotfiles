@@ -1,4 +1,4 @@
 return {
-    'neovim/nvim-lspconfig', 
-    enabled = true,
-  }
+	"neovim/nvim-lspconfig",
+	enabled = true,
+}
