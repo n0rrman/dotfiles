@@ -1,4 +1,7 @@
 -- CONFIG
+-- Reserve a space in the gutter
+-- This will avoid an annoying layout shift in the screen
+vim.opt.signcolumn = "yes"
 vim.opt.hidden = true           -- Improved buffers.
 vim.opt.fixendofline = false    -- Equivalent to 'nofixeol'
 vim.opt.fixeol = false          -- Equivalent to 'nofixeol'
