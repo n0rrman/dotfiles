@@ -1,7 +1,4 @@
 -- CONFIG
--- Reserve a space in the gutter
--- This will avoid an annoying layout shift in the screen
-vim.opt.signcolumn = "yes"
 vim.opt.hidden = true           -- Improved buffers.
 vim.opt.fixendofline = false    -- Equivalent to 'nofixeol'
 vim.opt.fixeol = false          -- Equivalent to 'nofixeol'
@@ -28,6 +25,7 @@ vim.opt.foldlevelstart = 99     -- Start with max fold level.
 
 
 -- UI
+vim.opt.signcolumn = "yes"      -- Reserve space in the gutter
 vim.opt.showmode = false        -- Hide mode from status bar
 vim.opt.laststatus = 0          -- Remove status from status bar 
 vim.opt.cursorline = true       -- Draws horizontal line on active line.
@@ -40,6 +38,6 @@ vim.opt.relativenumber = true   -- Show relative numbers.
 vim.opt.syntax = 'on'           -- Turn on syntax highlighting.
 vim.opt.termguicolors = true    -- Enable true colors.
 vim.opt.bg = 'dark'             -- Dark background syntax highlighting.
-vim.o.background = "dark"    
+vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 
