@@ -20,5 +20,6 @@ return {
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		vim.keymap.set("n", "<leader>fv", builtin.git_status, { desc = "Telescope git status" })
 		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope function references" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope nvim keymaps" })
 	end,
 }
