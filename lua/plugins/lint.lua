@@ -28,8 +28,7 @@ return {
         'rshkarin/mason-nvim-lint',
         enabled = true,
         opts = {
-            ensure_installed = require("config.lint").ensure_installed,
-            ignore_install = require("config.lint").ignore_install
+            require("config.servers").linter
         }
     }
 }

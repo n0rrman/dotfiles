@@ -12,7 +12,7 @@ return {
                     require("lspconfig")[server_name].setup({})
                 end,
             },
-            ensure_installed = require("config.lsp").ensure_installed,
+                require("config.servers").lsp
         }
     }
 }
