@@ -5,6 +5,6 @@ return {
 	config = true,
 	opts = {
 		contrast = "soft",
-		dim_inactive = false,
+		dim_inactive = true,
 	},
 }
