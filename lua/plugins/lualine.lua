@@ -5,8 +5,8 @@ return {
 		options = {
 			icons_enabled = true,
 			theme = "gruvbox-material",
-			component_separators = { left = "|", right = " | " },
-			section_separators = { left = "", right = "" },
+			component_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 			disabled_filetypes = {
 				statusline = {},
 				winbar = {},
@@ -14,7 +14,7 @@ return {
 			ignore_focus = {},
 			always_divide_middle = true,
 			always_show_tabline = true,
-			globalstatus = true,
+			globalstatus = false,
 			refresh = {
 				statusline = 100,
 				tabline = 100,
@@ -35,8 +35,8 @@ return {
 		inactive_sections = {
 			lualine_a = {},
 			lualine_b = {},
-			lualine_c = { "filename" },
-			lualine_x = { "location" },
+			lualine_c = { { "filename", path = 1 } },
+			lualine_x = { "filetype" },
 			lualine_y = {},
 			lualine_z = {},
 		},
