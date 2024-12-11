@@ -1,5 +1,9 @@
 return {
-    'petertriho/nvim-scrollbar',
-    enabled = true,
-    opts = {},
+	"petertriho/nvim-scrollbar",
+	enabled = true,
+	opts = {
+		handlers = {
+			gitsigns = true,
+		},
+	},
 }

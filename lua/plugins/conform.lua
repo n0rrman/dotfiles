@@ -45,7 +45,7 @@ return {
 	{
 		"zapling/mason-conform.nvim",
 		opts = {
-			require("config.servers").formatter
+			require("config.servers").formatter,
 		},
 		config = function()
 			vim.api.nvim_create_user_command("Format", function(args)

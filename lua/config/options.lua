@@ -2,6 +2,10 @@
 vim.opt.hidden = true           -- Improved buffers.
 vim.opt.fixendofline = false    -- Equivalent to 'nofixeol'
 vim.opt.fixeol = false          -- Equivalent to 'nofixeol'
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+
 
 -- INDENTATION
 vim.opt.autoindent = true       -- Auto indent when starting a new line.
@@ -10,6 +14,7 @@ vim.opt.tabstop = 4             -- The width of a tab is set to 4.
 vim.opt.shiftwidth = 4          -- Indent will have a width of 4.
 vim.opt.softtabstop = 4         -- Sets the number of columns for a tab to 4.
 vim.opt.expandtab = true        -- Expand tabs to spaces.
+vim.opt.backspace = "indent,eol,start"
 
 
 -- SEARCH
@@ -31,6 +36,7 @@ vim.opt.laststatus = 0          -- Remove status from status bar
 vim.opt.cursorline = true       -- Draws horizontal line on active line.
 vim.opt.wildmenu = true         -- Display command line complete option menu.
 vim.opt.showcmd = true          -- Show inserted command.
+vim.opt.wrap = false            -- Don't wrap
 vim.opt.linebreak = true        -- Don't line wrap mid-word.
 vim.opt.scrolloff = 2           -- Number of lines above and below the cursor.
 vim.opt.number = true           -- Show line numbers.
