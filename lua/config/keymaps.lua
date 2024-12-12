@@ -46,3 +46,17 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help ta
 vim.keymap.set("n", "<leader>fv", builtin.git_status, { desc = "Telescope git status" })
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope function references" })
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope nvim keymaps" })
+
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
+vim.keymap.set("n", "<leader>t1", "<cmd>tabnext 1<cr>", opts)
+vim.keymap.set("n", "<leader>t2", "<cmd>tabnext 2<cr>", opts)
+vim.keymap.set("n", "<leader>t3", "<cmd>tabnext 3<cr>", opts)
+vim.keymap.set("n", "<leader>t4", "<cmd>tabnext 4<cr>", opts)
+vim.keymap.set("n", "<leader>t5", "<cmd>tabnext 5<cr>", opts)
+vim.keymap.set("n", "<leader>tm1", "<cmd>tabmove 1<cr>", opts)
+vim.keymap.set("n", "<leader>tm2", "<cmd>tabmove 2<cr>", opts)
+vim.keymap.set("n", "<leader>tm3", "<cmd>tabmove 3<cr>", opts)
+vim.keymap.set("n", "<leader>tm4", "<cmd>tabmove 4<cr>", opts)
+vim.keymap.set("n", "<leader>tm5", "<cmd>tabmove 5<cr>", opts)
+
