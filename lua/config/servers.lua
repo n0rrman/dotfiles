@@ -1,22 +1,39 @@
 return {
-    -- FORMATTER --
+	-- FORMATTER --
 	formatter = {
 		ensure_installed = {
-			"eslint_d", -- Linter for JavaScript/TypeScript
-			"prettier", -- Code formatter for JS/TS/HTML/CSS
-			"black", -- Python code formatter
-			"flake8", -- Python linter
-			"stylua", -- Lua formatter
-			"rustfmt", -- Rust formatter
-			"gofmt", -- Go formatter
+			-- Javascript / Typscript
+			"eslint",
+			"eslint_d",
+			"prettier",
+			-- Python --
+			"black",
+			"flake8",
+			-- Lua --
+			"stylua",
+			-- Rust --
+			"rustfmt",
+			-- Go lang --
+			"gofmt",
 		},
 		ignore_install = {},
 	},
-    -- LINTER --
+	-- LINTER --
 	linter = {
 		ensure_installed = {
-			"pylint",
+			-- Javascript / Typscript
+			"eslint",
 			"eslint_d",
+			"prettier",
+			-- Python --
+			"black",
+			"flake8",
+			-- Lua --
+			"stylua",
+			-- Rust --
+			"rustfmt",
+			-- Go lang --
+			"gofmt",
 		},
 		ignore_install = {
 			"janet",
@@ -25,12 +42,16 @@ return {
 			"clj-kondo",
 		},
 	},
-    -- LSP -- 
+	-- LSP --
 	lsp = {
 		ensure_installed = {
+			-- Lua --
 			"lua_ls",
+			-- Angular --
 			"angularls",
 		},
 		ignore_install = {},
 	},
 }
+
+
