@@ -44,7 +44,6 @@ vim.keymap.set("n", "<leader>nT", ng.get_template_tcb, opts)
 -- Git
 vim.keymap.set("n", "<leader>gk", "<cmd>DiffviewOpen<cr>", opts)
 vim.keymap.set("n", "<leader>gj", "<cmd>DiffviewClose<cr>", opts)
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", opts)
 vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns blame<cr>", opts)
 
 -- Actions
