@@ -58,6 +58,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" 
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 vim.keymap.set("n", "<leader>fv", builtin.git_status, { desc = "Telescope git status" })
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope function references" })
+vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Telescope function references" })
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope nvim keymaps" })
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Telescope selected word" })
 
