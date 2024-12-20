@@ -1,65 +1,82 @@
-local opts = { noremap = true, silent = true }
-
--- CTRL-[hjkl]> to navigate splits
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
-
--- Rearrange windows with CTRL-arrow keys
-vim.keymap.set("n", "<leader><C-k>", "<C-W><S-k>", opts)
-vim.keymap.set("n", "<leader><C-j>", "<C-W><S-j>", opts)
-vim.keymap.set("n", "<leader><C-h>", "<C-W><S-h>", opts)
-vim.keymap.set("n", "<leader><C-l>", "<C-W><S-l>", opts)
-
--- Resize windows with leader key + C + h/j/k/l
-vim.keymap.set("n", "<leader>k", "<C-W>-", opts)
-vim.keymap.set("n", "<leader>j", "<C-W>+", opts)
-vim.keymap.set("n", "<leader>h", "<C-W><", opts)
-vim.keymap.set("n", "<leader>l", "<C-W>>", opts)
-
--- Tabs
-vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
-vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<cr>", opts)
-vim.keymap.set("n", "<leader>t1", "<cmd>tabnext 1<cr>", opts)
-vim.keymap.set("n", "<leader>t2", "<cmd>tabnext 2<cr>", opts)
-vim.keymap.set("n", "<leader>t3", "<cmd>tabnext 3<cr>", opts)
-vim.keymap.set("n", "<leader>t4", "<cmd>tabnext 4<cr>", opts)
-vim.keymap.set("n", "<leader>t5", "<cmd>tabnext 5<cr>", opts)
-vim.keymap.set("n", "<leader>tm1", "<cmd>tabmove 1<cr>", opts)
-vim.keymap.set("n", "<leader>tm2", "<cmd>tabmove 2<cr>", opts)
-vim.keymap.set("n", "<leader>tm3", "<cmd>tabmove 3<cr>", opts)
-vim.keymap.set("n", "<leader>tm4", "<cmd>tabmove 4<cr>", opts)
-vim.keymap.set("n", "<leader>tm5", "<cmd>tabmove 5<cr>", opts)
-
--- Oil menu
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
-
--- Angular
+--
+-- CONFIG --
+--
+-- Imports
 local ng = require("ng")
-vim.keymap.set("n", "<leader>nt", ng.goto_template_for_component, opts)
-vim.keymap.set("n", "<leader>nc", ng.goto_component_with_template_file, opts)
-vim.keymap.set("n", "<leader>nT", ng.get_template_tcb, opts)
-
--- Git
-vim.keymap.set("n", "<leader>gk", "<cmd>DiffviewOpen<cr>", opts)
-vim.keymap.set("n", "<leader>gj", "<cmd>DiffviewClose<cr>", opts)
-vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns blame<cr>", opts)
-
--- Actions
-vim.keymap.set("n", "<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-vim.keymap.set("n", "<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
-
--- Telescope
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-vim.keymap.set("n", "<leader>fv", builtin.git_status, { desc = "Telescope git status" })
-vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope function references" })
-vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Telescope function references" })
-vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope nvim keymaps" })
-vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Telescope selected word" })
 
+-- New keymap function
+local function keymap(input, output, desc)
+	local opts = {
+		noremap = true,
+		silent = true,
+		desc = desc,
+	}
+	vim.keymap.set("n", input, output, opts)
+end
 
+--
+-- GENERAL KEYMAPS --
+--
+-- Windiow navigation: CTRL-[hjkl]
+keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
+keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
+keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
+keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
+
+-- Window arrangement: Leader->CTRL-[hjkl]
+keymap("<leader><C-h>", "<C-W><S-h>", "Window arrangement: Move window left")
+keymap("<leader><C-j>", "<C-W><S-j>", "Window arrangement: Move window down")
+keymap("<leader><C-k>", "<C-W><S-k>", "Window arrangement: Move window up")
+keymap("<leader><C-l>", "<C-W><S-l>", "Window arrangement: Move window right")
+
+-- Window resize: Leader->[hjkl]
+keymap("<leader>h", "<C-W><", "Window resize: Move window border left")
+keymap("<leader>j", "<C-W>+", "Window resize: Move window border down")
+keymap("<leader>k", "<C-W>-", "Window resize: Move window border up")
+keymap("<leader>l", "<C-W>>", "Window resize: Move window border right")
+
+-- Tab management: Leader->t..
+keymap("<leader>tn", "<cmd>tabnew<cr>", "Tab management: Create new tab")
+keymap("<leader>tc", "<cmd>tabclose<cr>", "Tab management: Close current tab")
+keymap("<leader>t1", "<cmd>tabnext 1<cr>", "Tab management: Go to tab 1")
+keymap("<leader>t2", "<cmd>tabnext 2<cr>", "Tab management: Go to tab 2")
+keymap("<leader>t3", "<cmd>tabnext 3<cr>", "Tab management: Go to tab 3")
+keymap("<leader>t4", "<cmd>tabnext 4<cr>", "Tab management: Go to tab 4")
+keymap("<leader>t5", "<cmd>tabnext 5<cr>", "Tab management: Go to tab 5")
+keymap("<leader>tm1", "<cmd>tabmove 1<cr>", "Tab management: Move tab to position 1")
+keymap("<leader>tm2", "<cmd>tabmove 2<cr>", "Tab management: Move tab to position 2")
+keymap("<leader>tm3", "<cmd>tabmove 3<cr>", "Tab management: Move tab to position 3")
+keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to position 4")
+keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
+
+--
+-- PLUGIN KEYMAPS --
+--
+-- Oil: -
+keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
+
+-- Angular: Leader->n..
+keymap("<leader>nt", ng.goto_template_for_component, "Ng: Go to template file")
+keymap("<leader>nc", ng.goto_component_with_template_file, "Ng: Go to component file")
+keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
+
+-- Git: Leader->g..
+keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
+keymap("<leader>gj", "<cmd>DiffviewClose<cr>", "Diffview: Close diffview")
+keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
+
+-- Actions: Leader->a..
+keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
+keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
+
+-- Telescope: Leader->f..
+keymap("<leader>ff", builtin.find_files, "Telescope: Find files")
+keymap("<leader>fg", builtin.live_grep, "Telescope: Live grep")
+keymap("<leader>fb", builtin.buffers, "Telescope: Buffers")
+keymap("<leader>fh", builtin.help_tags, "Telescope: Help tags")
+keymap("<leader>fv", builtin.git_status, "Telescope: Git status")
+keymap("<leader>fr", builtin.lsp_references, "Telescope: Function references")
+keymap("gr", builtin.lsp_references, "Telescope: Function references")
+keymap("<leader>fk", builtin.keymaps, "Telescope: Nvim keymaps")
+keymap("<leader>fs", builtin.grep_string, "Telescope: Selected word")
