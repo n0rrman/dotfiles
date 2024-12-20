@@ -1,4 +1,4 @@
-return { 
-    "joeveiga/ng.nvim",
-    enabled = true,
+return {
+	"joeveiga/ng.nvim",
+	enabled = true,
 }

@@ -53,5 +53,3 @@ return {
 		ignore_install = {},
 	},
 }
-
-
