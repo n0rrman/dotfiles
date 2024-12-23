@@ -18,6 +18,11 @@ end
 --
 -- GENERAL KEYMAPS --
 --
+
+-- ESC: jk / kj -> ESC
+vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "kj", "<ESC>")
+
 -- Windiow navigation: CTRL-[hjkl]
 keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
 keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
@@ -50,6 +55,9 @@ keymap("<leader>tm3", "<cmd>tabmove 3<cr>", "Tab management: Move tab to positio
 keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to position 4")
 keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
 
+-- Move line: JK 
+keymap("K", ":m -2<cr>", "Move line: Move current line down")
+keymap("J", ":m +1<cr>", "Move line: Move current line up")
 --
 -- PLUGIN KEYMAPS --
 --
