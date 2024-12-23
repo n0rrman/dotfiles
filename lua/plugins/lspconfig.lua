@@ -3,7 +3,6 @@ return {
 		"neovim/nvim-lspconfig",
 		enabled = true,
 		config = function()
-			-- Add cmp_nvim_lsp capabilities to lspconfig before any servers are configured
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 

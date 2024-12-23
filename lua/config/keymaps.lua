@@ -3,6 +3,7 @@
 --
 -- Imports
 local ng = require("ng")
+local actions = require("actions-preview")
 local builtin = require("telescope.builtin")
 
 -- New keymap function
@@ -55,7 +56,7 @@ keymap("<leader>tm3", "<cmd>tabmove 3<cr>", "Tab management: Move tab to positio
 keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to position 4")
 keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
 
--- Move line: JK 
+-- Move line: JK
 keymap("K", ":m -2<cr>", "Move line: Move current line down")
 keymap("J", ":m +1<cr>", "Move line: Move current line up")
 --
@@ -69,16 +70,17 @@ keymap("<leader>nt", ng.goto_template_for_component, "Ng: Go to template file")
 keymap("<leader>nc", ng.goto_component_with_template_file, "Ng: Go to component file")
 keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
 
--- Git: Leader->g..
+-- Git: Leader->g...
 keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
 keymap("<leader>gj", "<cmd>DiffviewClose<cr>", "Diffview: Close diffview")
 keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
 
--- Actions: Leader->a..
+-- Actions: Leader->a...
+keymap("<leader>aa", actions.code_actions, "Diagnostic: Show actions")
 keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
 keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
 
--- Telescope: Leader->f..
+-- Telescope: Leader->f...
 keymap("<leader>ff", builtin.find_files, "Telescope: Find files")
 keymap("<leader>fg", builtin.live_grep, "Telescope: Live grep")
 keymap("<leader>fb", builtin.buffers, "Telescope: Buffers")
