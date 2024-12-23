@@ -39,7 +39,8 @@ return {
 					require("lspconfig")[server_name].setup({})
 				end,
 			},
-			require("config.servers").lsp,
+			ensure_installed = require("config.servers").lsp.ensure_installed,
+			ignore_install = require("config.servers").lsp.ensure_install,
 		},
 	},
 }
