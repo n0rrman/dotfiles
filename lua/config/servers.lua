@@ -54,6 +54,7 @@ return {
 		ensure_installed = {
 			-- General --
 			"harper_ls",
+            "emmet_ls",
 			-- Lua --
 			"lua_ls",
 			-- Angular --
