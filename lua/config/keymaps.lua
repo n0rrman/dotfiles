@@ -57,8 +57,8 @@ keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to positio
 keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
 
 -- Move line: JK
-keymap("K", ":m -2<cr>", "Move line: Move current line down")
-keymap("J", ":m +1<cr>", "Move line: Move current line up")
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
 --
 -- PLUGIN KEYMAPS --
 --
