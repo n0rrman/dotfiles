@@ -19,12 +19,7 @@ end
 --
 -- GENERAL KEYMAPS --
 --
-
--- ESC: jk / kj -> ESC
-vim.keymap.set("i", "jk", "<ESC>")
-vim.keymap.set("i", "kj", "<ESC>")
-
--- Windiow navigation: CTRL-[hjkl]
+-- Window navigation: CTRL-[hjkl]
 keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
 keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
 keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
@@ -42,7 +37,7 @@ keymap("<leader>j", "<C-W>+", "Window resize: Move window border down")
 keymap("<leader>k", "<C-W>-", "Window resize: Move window border up")
 keymap("<leader>l", "<C-W>>", "Window resize: Move window border right")
 
--- Tab management: Leader->t..
+-- Tab management: Leader->t...
 keymap("<leader>tn", "<cmd>tabnew<cr>", "Tab management: Create new tab")
 keymap("<leader>tc", "<cmd>tabclose<cr>", "Tab management: Close current tab")
 keymap("<leader>t1", "<cmd>tabnext 1<cr>", "Tab management: Go to tab 1")
@@ -65,7 +60,7 @@ vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
 -- Oil: -
 keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
 
--- Angular: Leader->n..
+-- Angular: Leader->n...
 keymap("<leader>nt", ng.goto_template_for_component, "Ng: Go to template file")
 keymap("<leader>nc", ng.goto_component_with_template_file, "Ng: Go to component file")
 keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
@@ -77,8 +72,8 @@ keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
 
 -- Actions: Leader->a...
 keymap("<leader>aa", actions.code_actions, "Diagnostic: Show actions")
-keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
-keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
+keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>l", "Diagnostic: Go to next")
+keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>l", "Diagnostic: Go to previous")
 
 -- Telescope: Leader->f...
 keymap("<leader>ff", builtin.find_files, "Telescope: Find files")

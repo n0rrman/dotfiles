@@ -5,12 +5,6 @@ vim.opt.fixeol = false -- Equivalent to 'nofixeol'
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
-vim.diagnostic.config({
-	virtual_text = false,
-	signs = true,
-	underline = true,
-	severity_sort = true,
-})
 
 -- INDENTATION
 vim.opt.autoindent = true -- Auto indent when starting a new line.
@@ -46,8 +40,31 @@ vim.opt.relativenumber = true -- Show relative numbers.
 vim.opt.syntax = "on" -- Turn on syntax highlighting.
 vim.opt.termguicolors = true -- Enable true colors.
 vim.opt.bg = "dark" -- Dark background syntax highlighting.
-vim.o.background = "dark"
 
--- Plugins
+-- PLUGINS
 vim.cmd([[colorscheme gruvbox]]) -- Set Gruvbox as theme
-vim.cmd('runtime! ftplugin/html.vim!') -- Angular html
+vim.cmd("runtime! ftplugin/html.vim!") -- Angular html
+
+-- DIAGNOSTIC
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "●",
+		spacing = 1,
+	},
+	float = {
+		border = "rounded",
+		source = "always",
+		header = "Diagnostics",
+		wrap = true,
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚",
+			[vim.diagnostic.severity.WARN] = "󰀪",
+			[vim.diagnostic.severity.INFO] = "!",
+			[vim.diagnostic.severity.HINT] = "󰌶",
+		},
+	},
+	underline = true,
+	severity_sort = true,
+})

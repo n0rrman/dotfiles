@@ -4,19 +4,17 @@ return {
 		diff = {
 			ctxlen = 3,
 		},
-		highlight_command = {
-		},
+		highlight_command = {},
 
 		backend = { "telescope", "nui" },
 
-		telescope = vim.tbl_extend(
-			"force",
-			require("telescope.themes").get_dropdown(),
-			{
-				make_value = nil,
-				make_make_display = nil,
-			}
-		),
+		telescope = vim.tbl_extend("force", require("telescope.themes").get_dropdown(), {
+			make_value = nil,
+			make_make_display = nil,
+		}),
+
+        show_diagnostics = true,
+        highlight = true,
 
 		nui = {
 			dir = "col",
