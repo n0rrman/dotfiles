@@ -19,19 +19,19 @@ end
 --
 -- GENERAL KEYMAPS --
 --
--- Window navigation: CTRL-[hjkl]
+-- Window navigation: ctrl-[h,j,k,l]
 keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
 keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
 keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
 keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
 
--- Window arrangement: Leader->CTRL-[hjkl]
+-- Window arrangement: Leader->CTRL-[h,j,k,l]
 keymap("<leader><C-h>", "<C-W><S-h>", "Window arrangement: Move window left")
 keymap("<leader><C-j>", "<C-W><S-j>", "Window arrangement: Move window down")
 keymap("<leader><C-k>", "<C-W><S-k>", "Window arrangement: Move window up")
 keymap("<leader><C-l>", "<C-W><S-l>", "Window arrangement: Move window right")
 
--- Window resize: Leader->[hjkl]
+-- Window resize: Leader->[h,j,k,l]
 keymap("<leader>h", "<C-W><", "Window resize: Move window border left")
 keymap("<leader>j", "<C-W>+", "Window resize: Move window border down")
 keymap("<leader>k", "<C-W>-", "Window resize: Move window border up")
@@ -51,7 +51,7 @@ keymap("<leader>tm3", "<cmd>tabmove 3<cr>", "Tab management: Move tab to positio
 keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to position 4")
 keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
 
--- Move line: JK
+-- Move line: j and k
 vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
 --
@@ -72,8 +72,8 @@ keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
 
 -- Actions: Leader->a...
 keymap("<leader>aa", actions.code_actions, "Diagnostic: Show actions")
-keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>l", "Diagnostic: Go to next")
-keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>l", "Diagnostic: Go to previous")
+keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
+keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
 
 -- Telescope: Leader->f...
 keymap("<leader>ff", builtin.find_files, "Telescope: Find files")
