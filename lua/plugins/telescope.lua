@@ -3,7 +3,16 @@ return {
 		"nvim-telescope/telescope.nvim",
 		enabled = true,
 		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				config = function()
+					require("telescope").load_extension("fzf")
+				end,
+			},
+		},
 		opts = {
 			extensions = {
 				fzf = {
@@ -14,9 +23,5 @@ return {
 				},
 			},
 		},
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
 	},
 }
