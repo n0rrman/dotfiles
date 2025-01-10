@@ -41,8 +41,15 @@ vim.opt.syntax = "on" -- Turn on syntax highlighting.
 vim.opt.termguicolors = true -- Enable true colors.
 vim.opt.bg = "dark" -- Dark background syntax highlighting.
 
--- PLUGINS
-vim.cmd([[colorscheme gruvbox]]) -- Set Gruvbox as theme
+-- Styling
+vim.cmd([[
+  colorscheme gruvbox
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]])
+
 vim.cmd("runtime! ftplugin/html.vim!") -- Angular html
 
 -- DIAGNOSTIC
