@@ -14,7 +14,7 @@ return {
 			ignore_focus = {},
 			always_divide_middle = true,
 			always_show_tabline = true,
-			globalstatus = false,
+			globalstatus = true,
 			refresh = {
 				statusline = 100,
 				tabline = 100,
@@ -52,7 +52,7 @@ return {
 			lualine_x = {
 				{
 					"filename",
-					path = 1,
+					path = 3,
 				},
 			},
 		},
