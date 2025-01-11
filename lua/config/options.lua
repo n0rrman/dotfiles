@@ -5,6 +5,7 @@ vim.opt.fixeol = false -- Equivalent to 'nofixeol'
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+vim.opt.mouse = ""
 
 -- INDENTATION
 vim.opt.autoindent = true -- Auto indent when starting a new line.

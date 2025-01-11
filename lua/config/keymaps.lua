@@ -20,10 +20,11 @@ end
 -- GENERAL KEYMAPS --
 --
 -- Window navigation: ctrl-[h,j,k,l]
-keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
-keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
-keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
-keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
+-- keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
+-- keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
+-- keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
+-- keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
+
 
 -- Window arrangement: Leader->CTRL-[h,j,k,l]
 keymap("<leader><C-h>", "<C-W><S-h>", "Window arrangement: Move window left")
