@@ -1,1 +1,1 @@
-# Neovim config
+# Dotfiles
