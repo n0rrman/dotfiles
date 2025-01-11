@@ -1,59 +1,63 @@
 all: setup
 
-.PHONY: setup sym_echo nvim tmux ghostty fish
-setup: sym_echo nvim tmux ghostty fish
+.PHONY: update setup sym_echo nvim tmux ghostty fish
+setup: update sym_echo nvim tmux ghostty fish
 	
+update:
+	@echo 'Pulling latest version.'
+	@git pull
+
 sym_echo:
-	@echo 'Setting up symlinks...'
+	@echo 'Setting up symlinks.'
 
 nvim:
 	@mkdir -p $(HOME)/.config/
 	@if [ -L $(HOME)/.config/nvim ]; then \
-		echo '* Nvim already setup'; \
+		echo '[Nvim] Already setup.'; \
 	else \
 		if [ -d $(HOME)/.config/nvim ]; then \
 			mv $(HOME)/.config/nvim $(HOME)/.config/nvim_bak; \
-			echo '* Existing nvim config moved to ~/.config/nvim_bak'; \
+			echo '[Nvim] Existing config moved to ~/.config/nvim_bak.'; \
 		fi; \
 		ln -s $(shell pwd)/nvim $(HOME)/.config/nvim; \
-		echo '* Nvim done'; \
+		echo '[Nvim] Done.'; \
 	fi
 
 tmux:
 	@if [ -L $(HOME)/.tmux.conf ]; then \
-		echo '* Tmux already setup'; \
+		echo '[Tmux] Already setup.'; \
 	else \
 		if [ -e $(HOME)/.tmux.conf ]; then \
 			mv $(HOME)/.tmux.conf $(HOME)/.tmux.conf.bak; \
-			echo '* Existing tmux config moved to ~/.tmux.conf.bak'; \
+			echo '[Tmux] Existing config moved to ~/.tmux.conf.bak,'; \
 		fi; \
 		ln -s $(shell pwd)/tmux/dot_tmux.conf $(HOME)/.tmux.conf; \
-		echo '* Tmux done'; \
+		echo '[Tmux] Done.'; \
 	fi
 
 ghostty:
 	@mkdir -p $(HOME)/.config/
 	@if [ -L $(HOME)/.config/ghostty ]; then \
-		echo '* Ghostty already setup'; \
+		echo '[Ghostty] Already setup.'; \
 	else \
 		if [ -d $(HOME)/.config/ghostty ]; then \
 			mv $(HOME)/.config/ghostty $(HOME)/.config/ghostty_bak; \
-			echo '* Existing ghostty config moved to ~/.config/ghostty_bak'; \
+			echo '[Ghostty] Existing config moved to ~/.config/ghostty_bak.'; \
 		fi; \
 		ln -s $(shell pwd)/ghostty $(HOME)/.config/ghostty; \
-		echo '* Ghostty done'; \
+		echo '[Ghostty] done.'; \
 	fi
 
 fish:
 	@mkdir -p $(HOME)/.config/
 	@if [ -L $(HOME)/.config/fish ]; then \
-		echo '* Fish already setup'; \
+		echo '[Fish] already setup.'; \
 	else \
 		if [ -d $(HOME)/.config/fish ]; then \
 			mv $(HOME)/.config/fish $(HOME)/.config/fish_bak; \
-			echo '* Existing fish config moved to ~/.config/fish_bak'; \
+			echo '[Fish] Existing config moved to ~/.config/fish_bak.'; \
 		fi; \
 		ln -s $(shell pwd)/fish $(HOME)/.config/fish; \
-		echo '* Fish done'; \
+		echo '[Fish] Done.'; \
 	fi
 
