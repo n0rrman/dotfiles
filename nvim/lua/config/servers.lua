@@ -16,6 +16,7 @@ return {
 		lua = { "stylua" },
 		python = { "isort", "black" },
 		rust = { "rustfmt" },
+        make = { "checkmake" },
 		go = { "goimports" },
 		["*"] = { "codespell" },
 	},
@@ -40,6 +41,8 @@ return {
 			"flake8",
 			-- Rust --
 			"rustfmt",
+            -- Make --
+            "checkmake",
 			-- Go --
 			"goimports",
 		},
@@ -68,6 +71,8 @@ return {
 			-- CSS -
 			"tailwindcss",
 			"cssls",
+            -- Make --
+            "autotools_ls",
 			-- Go --
 			"gopls",
 			"templ",
