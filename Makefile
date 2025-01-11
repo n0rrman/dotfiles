@@ -1,7 +1,7 @@
 all: setup
 
-.PHONY: setup sym_echo nvim tmux ghostty
-setup: sym_echo nvim tmux ghostty
+.PHONY: setup sym_echo nvim tmux ghostty fish
+setup: sym_echo nvim tmux ghostty fish
 	
 sym_echo:
 	@echo 'Setting up symlinks...'
@@ -42,5 +42,18 @@ ghostty:
 		fi; \
 		ln -s $(shell pwd)/ghostty $(HOME)/.config/ghostty; \
 		echo '* Ghostty done'; \
+	fi
+
+fish:
+	@mkdir -p $(HOME)/.config/
+	@if [ -L $(HOME)/.config/fish ]; then \
+		echo '* Fish already setup'; \
+	else \
+		if [ -d $(HOME)/.config/fish ]; then \
+			mv $(HOME)/.config/fish $(HOME)/.config/fish_bak; \
+			echo '* Existing fish config moved to ~/.config/fish_bak'; \
+		fi; \
+		ln -s $(shell pwd)/fish $(HOME)/.config/fish; \
+		echo '* Fish done'; \
 	fi
 
