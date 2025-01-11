@@ -1,7 +1,7 @@
 all: setup
 
-.PHONY: setup sym_echo nvim tmux
-setup: sym_echo nvim tmux
+.PHONY: setup sym_echo nvim tmux ghostty
+setup: sym_echo nvim tmux ghostty
 	
 sym_echo:
 	@echo 'Setting up symlinks...'
@@ -30,3 +30,17 @@ tmux:
 		ln -s $(shell pwd)/tmux/dot_tmux.conf $(HOME)/.tmux.conf; \
 		echo '* Tmux done'; \
 	fi
+
+ghostty:
+	@mkdir -p $(HOME)/.config/
+	@if [ -L $(HOME)/.config/ghostty ]; then \
+		echo '* Ghostty already setup'; \
+	else \
+		if [ -d $(HOME)/.config/ghostty ]; then \
+			mv $(HOME)/.config/ghostty $(HOME)/.config/ghostty_bak; \
+			echo '* Existing ghostty config moved to ~/.config/ghostty_bak'; \
+		fi; \
+		ln -s $(shell pwd)/ghostty $(HOME)/.config/ghostty; \
+		echo '* Ghostty done'; \
+	fi
+
