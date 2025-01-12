@@ -1,7 +1,7 @@
 all: setup
 
-.PHONY: update setup sym_echo nvim tmux ghostty fish
-setup: update sym_echo nvim tmux ghostty fish
+.PHONY: update setup sym_echo nvim vim tmux ghostty fish
+setup: update sym_echo nvim vim tmux ghostty fish
 	
 update:
 	@echo 'Pulling latest version.'
@@ -22,6 +22,19 @@ nvim:
 		ln -s $(shell pwd)/nvim $(HOME)/.config/nvim; \
 		echo '[Nvim] Done.'; \
 	fi
+	
+vim:
+	@if [ -L $(HOME)/.vimrc ]; then \
+		echo '[Vim] Already setup.'; \
+	else \
+		if [ -e $(HOME)/.vimrc ]; then \
+			mv $(HOME)/.vimrc $(HOME)/.vimrc.bak; \
+			echo '[Vim] Existing config moved to ~/.vimrc.bak,'; \
+		fi; \
+		ln -s $(shell pwd)/vim/dot_vimrc $(HOME)/.vimrc; \
+		echo '[Vim] Done.'; \
+	fi
+
 
 tmux:
 	@if [ -L $(HOME)/.tmux.conf ]; then \
