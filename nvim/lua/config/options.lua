@@ -72,3 +72,10 @@ vim.diagnostic.config({
 	underline = true,
 	severity_sort = true,
 })
+
+-- -- Highlight on yank
+vim.cmd([[ 
+    augroup highlight_yank 
+        autocmd! au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200}) 
+    augroup END 
+]])
