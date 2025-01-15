@@ -58,13 +58,13 @@ ghostty:
 			echo '[Ghostty] Existing config moved to ~/.config/ghostty_bak.'; \
 		fi; \
 		ln -s $(shell pwd)/ghostty $(HOME)/.config/ghostty; \
-		echo '[Ghostty] done.'; \
+		echo '[Ghostty] Done.'; \
 	fi
 
 fish:
 	@mkdir -p $(HOME)/.config/
 	@if [ -L $(HOME)/.config/fish ]; then \
-		echo '[Fish] already setup.'; \
+		echo '[Fish] Already setup.'; \
 	else \
 		if [ -d $(HOME)/.config/fish ]; then \
 			mv $(HOME)/.config/fish $(HOME)/.config/fish_bak; \
