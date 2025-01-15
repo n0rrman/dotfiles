@@ -117,5 +117,3 @@ if type -q tmux
     end
 end
 
-set -U fish_greeting ""
-neofetch
