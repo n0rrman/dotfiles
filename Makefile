@@ -1,7 +1,8 @@
 all: setup
 
-.PHONY: update setup sym_echo nvim vim tmux ghostty fish
+.PHONY: update setup sym_echo nvim nvim_unlink vim vim_unlink tmux tmux_unlink ghostty ghostty_unlink fish fish_unlink
 setup: update sym_echo nvim vim tmux ghostty fish
+unlink: nvim_unlink vim_unlink tmux_unlink ghostty_unlink fish_unlink
 	
 update:
 	@echo 'Pulling latest version.'
@@ -10,6 +11,8 @@ update:
 sym_echo:
 	@echo 'Setting up symlinks.'
 
+
+# Setup
 nvim:
 	@mkdir -p $(HOME)/.config/
 	@if [ -L $(HOME)/.config/nvim ]; then \
@@ -72,5 +75,46 @@ fish:
 		fi; \
 		ln -s $(shell pwd)/fish $(HOME)/.config/fish; \
 		echo '[Fish] Done.'; \
+	fi
+
+# Unlink
+nvim_unlink:
+	@if [ -L $(HOME)/.config/nvim ]; then \
+		rm $(HOME)/.config/nvim; \
+		echo '[Nvim] Unlinked.'; \
+	else \
+		echo '[Nvim] Not linked.'; \
+	fi
+	
+vim_unlink:
+	@if [ -L $(HOME)/.vimrc ]; then \
+		rm $(HOME)/.vimrc; \
+		echo '[Vim] Unlinked.'; \
+	else \
+		echo '[Vim] Not linked.'; \
+	fi
+
+tmux_unlink:
+	@if [ -L $(HOME)/.tmux.conf ]; then \
+		rm $(HOME)/.tmux.conf; \
+		echo '[Tmux] Unlinked.'; \
+	else \
+		echo '[Tmux] Not linked.'; \
+	fi
+
+ghostty_unlink:
+	@if [ -L $(HOME)/.config/ghostty ]; then \
+		rm $(HOME)/.config/ghostty; \
+		echo '[Ghostty] Unlinked.'; \
+	else \
+		echo '[Ghostty] Not linked.'; \
+	fi
+
+fish_unlink:
+	@if [ -L $(HOME)/.config/fish ]; then \
+		rm $(HOME)/.config/fish; \
+		echo '[Fish] Unlinked.'; \
+	else \
+		echo '[Fish] Not linked.'; \
 	fi
 
