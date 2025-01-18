@@ -1,5 +1,5 @@
-## Paths
-set --prepend PATH "$HOME/go/bin:$HOME/bin:/opt/homebrew/bin"
+# Paths
+set --prepend PATH "$HOME/go/bin:$HOME/bin:/opt/homebrew/bin:/nix/var/nix/profiles/default/bin/nix"
 set --prepend GOPATH "$HOME/go"
 
 
@@ -109,6 +109,12 @@ function fish_prompt
     echo -n -s $prompt_host $cwd $pwd $normal ' ' $delim ' '
 end
 
+
+
+# Nix
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+end
 
 ## Start tmux
 if type -q tmux
