@@ -1,3 +1,10 @@
+# General
 **/.DS_Store
+
+# nvim
 **/lazy-lock.json
 **/.luarc.json
+
+
+# script
+push.sh
