@@ -34,4 +34,7 @@ gtk-tabs-location = hidden
 gtk-titlebar = false
 title = ghostty
 window-decoration = true
-quit-after-last-window-closed= true
+quit-after-last-window-closed = true
+
+# Autostart
+command = /run/current-system/sw/bin/fish

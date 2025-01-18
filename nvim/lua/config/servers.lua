@@ -18,6 +18,7 @@ return {
 		rust = { "rustfmt" },
         make = { "checkmake" },
 		go = { "goimports" },
+        nix = { "nixpkgs-fmt", "nil" },
 		["*"] = { "codespell" },
 	},
 
@@ -41,6 +42,8 @@ return {
 			"flake8",
 			-- Rust --
 			"rustfmt",
+            -- Nix --
+            "nixpkgs-fmt",
             -- Make --
             "checkmake",
 			-- Go --
@@ -66,17 +69,17 @@ return {
 			-- Typescript --
 			"ts_ls",
 			"biome",
-			"denols",
 			"eslint",
 			-- CSS -
 			"tailwindcss",
 			"cssls",
             -- Make --
             "autotools_ls",
+            -- Nix --
+            "nil_ls",
 			-- Go --
 			"gopls",
 			"templ",
-			"golangci_lint_ls",
 			-- Rust --
 			"rust_analyzer",
 			-- C/C++ --
