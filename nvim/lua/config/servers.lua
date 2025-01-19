@@ -16,9 +16,8 @@ return {
 		lua = { "stylua" },
 		python = { "isort", "black" },
 		rust = { "rustfmt" },
-        make = { "checkmake" },
+		make = { "checkmake" },
 		go = { "goimports" },
-        nix = { "nixpkgs-fmt", "nil" },
 		["*"] = { "codespell" },
 	},
 
@@ -42,10 +41,10 @@ return {
 			"flake8",
 			-- Rust --
 			"rustfmt",
-            -- Nix --
-            "nixpkgs-fmt",
-            -- Make --
-            "checkmake",
+			-- Nix --
+			"nixpkgs-fmt",
+			-- Make --
+			"checkmake",
 			-- Go --
 			"goimports",
 		},
@@ -61,7 +60,7 @@ return {
 		ensure_installed = {
 			-- General --
 			"harper_ls",
-            "emmet_ls",
+			"emmet_ls",
 			-- Lua --
 			"lua_ls",
 			-- Angular --
@@ -73,10 +72,10 @@ return {
 			-- CSS -
 			"tailwindcss",
 			"cssls",
-            -- Make --
-            "autotools_ls",
-            -- Nix --
-            "nil_ls",
+			-- Make --
+			"autotools_ls",
+			-- Nix --
+			"nil_ls",
 			-- Go --
 			"gopls",
 			"templ",
