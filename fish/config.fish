@@ -1,6 +1,5 @@
 # Paths
 set --prepend PATH "$HOME/go/bin"
-set --prepend PATH "/run/current-system/sw/bin"
 set --prepend GOPATH "$HOME/go"
 
 
