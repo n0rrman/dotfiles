@@ -70,6 +70,9 @@ keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
 keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
 keymap("<leader>gj", "<cmd>DiffviewClose<cr>", "Diffview: Close diffview")
 keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
+keymap("<leader>gg", "<cmd>CopilotChatToggle<cr>", "Copilot: Open chat")
+vim.keymap.set("i", "<S-Tab>", "copilot#Accept('<CR>')", { expr = true, silent = true })
+
 
 -- Actions: Leader->a...
 keymap("<leader>aa", actions.code_actions, "Diagnostic: Show actions")
@@ -86,3 +89,5 @@ keymap("<leader>fr", builtin.lsp_references, "Telescope: Function references")
 keymap("gr", builtin.lsp_references, "Telescope: Function references")
 keymap("<leader>fk", builtin.keymaps, "Telescope: Nvim keymaps")
 keymap("<leader>fs", builtin.grep_string, "Telescope: Selected word")
+keymap("<leader>fp", builtin.registers, "Telescope: Registers")
+
