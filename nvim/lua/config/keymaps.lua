@@ -71,7 +71,7 @@ keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
 keymap("<leader>gj", "<cmd>DiffviewClose<cr>", "Diffview: Close diffview")
 keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
 keymap("<leader>gg", "<cmd>CopilotChatToggle<cr>", "Copilot: Open chat")
-vim.keymap.set("i", "<S-Tab>", "copilot#Accept('<CR>')", { expr = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', "copilot#Accept('<CR>')", { expr = true, silent = true })
 
 
 -- Actions: Leader->a...
