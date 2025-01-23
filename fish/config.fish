@@ -5,6 +5,7 @@ set --prepend GOPATH "$HOME/go"
 
 ## Config
 set -x EDITOR nvim
+set -x XDG_CONFIG_HOME $HOME/.config
 
 ## Alias
 alias rm="trash" # Safe delete
