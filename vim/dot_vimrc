@@ -85,5 +85,5 @@ set relativenumber
 syntax enable
 set termguicolors
 set background=dark
-color habamax
+color slate
 
