@@ -37,4 +37,4 @@ window-decoration = true
 quit-after-last-window-closed = true
 
 # Autostart
-command = fish
+command = /run/current-system/sw/bin/fish
