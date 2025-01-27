@@ -23,7 +23,8 @@ vim.opt.ignorecase = true -- Ignore case when searching.
 vim.opt.smartcase = true -- Overrides 'ignorecase' if uppercase.
 
 -- FOLDING
-vim.opt.foldmethod = "syntax" -- Fold based on syntax.
+vim.opt.foldmethod = "expr" -- Fold based on syntax.
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- Treesitter folding.
 vim.opt.foldlevelstart = 99 -- Start with max fold level.
 
 -- UI
