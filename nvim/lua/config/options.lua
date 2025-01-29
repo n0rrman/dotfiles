@@ -59,7 +59,10 @@ vim.filetype.add({
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "●",
+        priority = 1,
 		spacing = 1,
+        suffix = "  ",
+        virt_text_pos = "right_align",
 	},
 	float = {
 		border = "rounded",

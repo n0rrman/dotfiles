@@ -74,8 +74,8 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', "copilot#Accept('<CR>')", { expr = true,
 
 
 -- Diagnostics: Leader->a...
-keymap("<leader>aa", "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostic: Show diagnostics")
-keymap("<leader>af", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Diagnostic: Show actions")
+keymap("<leader>aa", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Diagnostic: Show actions")
+keymap("<leader>ad", "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostic: Show diagnostics")
 keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
 keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
 

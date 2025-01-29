@@ -36,7 +36,7 @@ return {
 				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
 				delay = 100,
 				ignore_whitespace = false,
-				virt_text_priority = 100,
+				virt_text_priority = 20,
 				use_focus = true,
 			},
 			current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
