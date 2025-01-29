@@ -50,19 +50,19 @@ vim.cmd([[
 
 -- File type override for Angular components
 vim.filetype.add({
-  pattern = {
-    [".*%.component%.html"] = "htmlangular", -- Sets the filetype to `htmlangular` if it matches the pattern
-  },
+	pattern = {
+		[".*%.component%.html"] = "htmlangular", -- Sets the filetype to `htmlangular` if it matches the pattern
+	},
 })
 
 -- DIAGNOSTIC
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "●",
-        priority = 1,
+		priority = 1,
 		spacing = 1,
-        suffix = "  ",
-        virt_text_pos = "right_align",
+		suffix = "  ",
+		virt_text_pos = "right_align",
 	},
 	float = {
 		border = "rounded",

@@ -6,7 +6,8 @@ return {
 			icons_enabled = true,
 			theme = "gruvbox-material",
 			section_separators = { left = " ", right = " " },
-			component_separators = { left = " ", right = "  " },
+			-- component_separators = { left = " ", right = "  " },
+			component_separators = { left = " ", right = " | " },
 			disabled_filetypes = {
 				statusline = {},
 				winbar = {},
@@ -14,7 +15,7 @@ return {
 			ignore_focus = {},
 			always_divide_middle = true,
 			always_show_tabline = true,
-			globalstatus = true,
+			globalstatus = false,
 			refresh = {
 				statusline = 100,
 				tabline = 100,
@@ -57,7 +58,7 @@ return {
 			},
 		},
 		winbar = {},
-		inactive_winbar = {},
+		inactive_winbar = { },
 		extensions = { "oil", "mason", "fzf" },
 	},
 }
