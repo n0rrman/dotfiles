@@ -48,7 +48,12 @@ vim.cmd([[
   colorscheme gruvbox
 ]])
 
-vim.cmd("runtime! ftplugin/html.vim!") -- Angular html
+-- File type override for Angular components
+vim.filetype.add({
+  pattern = {
+    [".*%.component%.html"] = "htmlangular", -- Sets the filetype to `htmlangular` if it matches the pattern
+  },
+})
 
 -- DIAGNOSTIC
 vim.diagnostic.config({
