@@ -5,5 +5,6 @@ return {
 		handlers = {
 			gitsigns = true,
 		},
+        priority = 100,
 	},
 }

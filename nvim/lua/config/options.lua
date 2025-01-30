@@ -63,6 +63,9 @@ vim.diagnostic.config({
 		spacing = 1,
 		suffix = "  ",
 		virt_text_pos = "right_align",
+		format = function(diagnostic)
+			return string.format("%s [%s]", diagnostic.code or "", diagnostic.source)
+		end,
 	},
 	float = {
 		border = "rounded",

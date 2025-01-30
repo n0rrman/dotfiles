@@ -8,15 +8,15 @@ return {
             -- Rounded
 			-- section_separators = { left = " ", right = " " },
 			-- component_separators = { left = " ", right = "  " },
-			section_separators = { left = " ", right = " " },
+			section_separators = { left = "", right = "" },
             -- Square
-			component_separators = { left = " | ", right = " | " },
+			component_separators = { left = "|", right = "|" },
 			disabled_filetypes = {
 				statusline = {},
 				winbar = {},
 			},
 			ignore_focus = {},
-			always_divide_middle = true,
+			always_divide_middle = false,
 			always_show_tabline = true,
 			globalstatus = false,
 			refresh = {
@@ -26,15 +26,16 @@ return {
 			},
 		},
 		sections = {
-			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff" },
+			lualine_a = { { "mode", padding = 1 } },
+			lualine_b = { { "branch", padding = 2}, { "diff", padding = 1 } },
 			lualine_c = { {
 				"diagnostics",
 				sources = { "nvim_lsp" },
+                padding = 1
 			} },
-			lualine_x = { "encoding", "filetype" },
-			lualine_y = { "searchcount" },
-			lualine_z = { "location" },
+			lualine_x = { { "encoding", padding = 2 }, { "filetype", padding = 2 } },
+			lualine_y = { { "location", padding = 1 } },
+			lualine_z = { { "progress", padding = 2 } },
 		},
 		inactive_sections = {
 			lualine_a = {},
