@@ -10,6 +10,8 @@ return {
             model = "claude-3.5-sonnet",
             window = {
                 layout = "float",
+                width = 0.6,
+                height = 0.7,
             },
     },
     -- See Commands section for default commands if you want to lazy load on them
