@@ -55,6 +55,14 @@ vim.filetype.add({
 	},
 })
 
+-- Comment string for Angular components
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "htmlangular",
+	callback = function()
+		vim.bo.commentstring = "<!-- %s -->"
+	end,
+})
+
 -- DIAGNOSTIC
 vim.diagnostic.config({
 	virtual_text = {
