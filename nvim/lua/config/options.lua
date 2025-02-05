@@ -49,6 +49,7 @@ vim.opt.relativenumber = true -- Show relative numbers.
 vim.opt.syntax = "on" -- Turn on syntax highlighting.
 vim.opt.termguicolors = true -- Enable true colors.
 vim.opt.bg = "dark" -- Dark background syntax highlighting.
+vim.opt.conceallevel = 2 -- Conceal text.
 
 -- Styling
 vim.cmd([[
