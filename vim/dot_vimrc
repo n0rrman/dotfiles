@@ -34,10 +34,6 @@ nnoremap <leader>tm3 :tabmove 3<CR>   " Move tab to position 3
 nnoremap <leader>tm4 :tabmove 4<CR>   " Move tab to position 4
 nnoremap <leader>tm5 :tabmove 5<CR>   " Move tab to position 5
 
-" Move lines in Visual mode: j and k
-vnoremap K :m '>+1<CR>gv=gv  " Move line down
-vnoremap J :m '<-2<CR>gv=gv  " Move line up
-
 " Open file browser
 nnoremap - :Explore<CR>
 
