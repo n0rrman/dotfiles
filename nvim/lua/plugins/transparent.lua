@@ -1,7 +1,7 @@
 return {
 	"xiyaowong/transparent.nvim",
 	enabled = true,
-	config = {
+	opts = {
 		exclude_groups = {
 			"CursorLine",
 		},
