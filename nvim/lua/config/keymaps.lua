@@ -53,6 +53,11 @@ keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to positio
 
 -- PLUGIN KEYMAPS --
 --
+
+-- Copy / paste: Leader->c...
+vim.api.nvim_set_keymap("v", "<leader>cy", '"+y', { noremap = true, desc = "Copy selection to clipboard" })
+vim.api.nvim_set_keymap("", "<leader>cp", '"+p', { noremap = true, desc = "Paste from clipboard" })
+
 -- Oil: -
 keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
 
@@ -60,6 +65,7 @@ keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
 keymap("<leader>nt", ng.goto_template_for_component, "Ng: Go to template file")
 keymap("<leader>nc", ng.goto_component_with_template_file, "Ng: Go to component file")
 keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
+
 
 -- Git: Leader->g...
 keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
