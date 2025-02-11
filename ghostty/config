@@ -38,3 +38,7 @@ quit-after-last-window-closed = true
 
 # Autostart
 command = /run/current-system/sw/bin/fish
+
+# Copy / paste
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
