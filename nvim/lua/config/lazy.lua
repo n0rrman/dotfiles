@@ -22,6 +22,7 @@ require("lazy").setup({
 	spec = {
 		{
 			"williamboman/mason.nvim",
+            cmd = "Mason",
 			opts = {},
 		},
 		{

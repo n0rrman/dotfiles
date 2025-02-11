@@ -31,7 +31,6 @@ return {
 			"prettier",
 			"prettierd",
 			"biome",
-			"quick-lint-js",
 			"prettier",
 			-- Lua --
 			"stylua",

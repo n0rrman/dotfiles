@@ -78,9 +78,6 @@ vim.diagnostic.config({
 		priority = 1,
 		spacing = 1,
 		virt_text_pos = "eol",
-		-- format = function(diagnostic)
-		-- 	return string.format("%s [%s]", diagnostic.code or "", diagnostic.source)
-		-- end,
 	},
 	float = {
 		border = "rounded",

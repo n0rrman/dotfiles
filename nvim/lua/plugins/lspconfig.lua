@@ -2,6 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
+        event = "VeryLazy",
 		config = function()
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -30,6 +31,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		enabled = true,
+        event = "VeryLazy",
 		opts = {
 			handlers = {
 				function(server_name)

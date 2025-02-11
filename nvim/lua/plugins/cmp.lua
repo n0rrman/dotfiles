@@ -1,6 +1,7 @@
 return {
 	"hrsh7th/nvim-cmp",
 	enabled = true,
+    event = "VeryLazy",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp", -- LSP completions
 		"hrsh7th/cmp-buffer", -- Buffer completions
