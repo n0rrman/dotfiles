@@ -19,11 +19,10 @@ end
 -- GENERAL KEYMAPS --
 --
 -- Window navigation: ctrl-[h,j,k,l]
--- keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
--- keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
--- keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
--- keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
-
+keymap("<C-h>", "<cmd>wincmd h<CR>", "Window navigation: Navigate to left window")
+keymap("<C-j>", "<cmd>wincmd j<CR>", "Window navigation: Navigate to lower window")
+keymap("<C-k>", "<cmd>wincmd k<CR>", "Window navigation: Navigate to upper window")
+keymap("<C-l>", "<cmd>wincmd l<CR>", "Window navigation: Navigate to right window")
 
 -- Window arrangement: Leader->CTRL-[h,j,k,l]
 keymap("<leader><C-h>", "<C-W><S-h>", "Window arrangement: Move window left")
@@ -51,6 +50,7 @@ keymap("<leader>tm3", "<cmd>tabmove 3<cr>", "Tab management: Move tab to positio
 keymap("<leader>tm4", "<cmd>tabmove 4<cr>", "Tab management: Move tab to position 4")
 keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to position 5")
 
+--
 -- PLUGIN KEYMAPS --
 --
 

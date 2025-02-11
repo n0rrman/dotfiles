@@ -1,6 +1,7 @@
 return {
 	"stevearc/oil.nvim",
 	enabled = true,
+    cmd = "Oil",
 	opts = {
 		delete_to_trash = true,
 		view_options = {
