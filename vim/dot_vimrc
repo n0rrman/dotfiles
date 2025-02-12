@@ -2,6 +2,10 @@
 set mouse=
 let mapleader = " "
 
+" Buffer navigation
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
+
 " Window arrangement: Leader->Ctrl-[h,j,k,l]
 nnoremap <C-h> <C-W>h      " Navigate to left window
 nnoremap <C-j> <C-W>j      " Navigate to lower window

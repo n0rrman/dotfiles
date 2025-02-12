@@ -6,13 +6,13 @@ local ng = require("ng")
 local builtin = require("telescope.builtin")
 
 -- New keymap function
-local function keymap(input, output, desc)
-	local opts = {
-		noremap = true,
-		silent = true,
-		desc = desc,
-	}
-	vim.keymap.set("n", input, output, opts)
+local function keymap(input, output, desc, mode)
+    local opts = {
+        noremap = true,
+        silent = true,
+        desc = desc,
+    }
+    vim.keymap.set(mode or "n", input, output, opts)
 end
 
 --
@@ -53,10 +53,12 @@ keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to positio
 --
 -- PLUGIN KEYMAPS --
 --
+keymap("<S-h>", ":bprevious<CR>", "Previous buffer")
+keymap("<S-l>", ":bnext<CR>", "Next buffer")
 
 -- Copy / paste: Leader->c...
-vim.api.nvim_set_keymap("v", "<leader>cy", '"+y', { noremap = true, desc = "Copy selection to clipboard" })
-vim.api.nvim_set_keymap("", "<leader>cp", '"+p', { noremap = true, desc = "Paste from clipboard" })
+keymap("<leader>cy", '"+y', "Copy selection to clipboard", "v")
+keymap("<leader>cp", '"+p', "Paste from clipboard", "")
 
 -- Oil: -
 keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
