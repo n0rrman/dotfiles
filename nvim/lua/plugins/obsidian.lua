@@ -8,8 +8,12 @@ return {
   opts = {
     workspaces = {
       {
+        name = "main",
+        path = "~/Obsidian/main",
+      },
+      {
         name = "work",
-        path = "~/Documents/Obsidian/work",
+        path = "~/Obsidian/work",
       },
     },
     ui = {
@@ -18,5 +22,11 @@ return {
         ["x"] = { char = "", hl_group = "ObsidianDone" },
       },
     },
+     templates = {
+        folder = "templates",
+        date_format = "%Y-%m-%d",
+        time_format = "%H:%M",
+        substitutions = {},
+      },
   },
 }
