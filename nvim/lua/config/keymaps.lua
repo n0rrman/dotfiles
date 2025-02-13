@@ -3,7 +3,7 @@
 --
 -- Imports
 local ng = require("ng")
-local builtin = require("telescope.builtin")
+local telescope = require("telescope.builtin")
 
 -- New keymap function
 local function keymap(input, output, desc, mode)
@@ -56,20 +56,20 @@ keymap("<leader>tm5", "<cmd>tabmove 5<cr>", "Tab management: Move tab to positio
 keymap("<S-h>", ":bprevious<CR>", "Previous buffer")
 keymap("<S-l>", ":bnext<CR>", "Next buffer")
 
--- Copy / paste: Leader->c...
+-- Copy / paste: Leader -> c 
 keymap("<leader>cy", '"+y', "Copy selection to clipboard", "v")
 keymap("<leader>cp", '"+p', "Paste from clipboard", "")
 
 -- Oil: -
 keymap("-", "<CMD>Oil --float<CR>", "Oil: Open Oil / Open parent directory")
 
--- Angular: Leader->n...
+-- Angular: Leader -> n
 keymap("<leader>nt", ng.goto_template_for_component, "Ng: Go to template file")
 keymap("<leader>nc", ng.goto_component_with_template_file, "Ng: Go to component file")
 keymap("<leader>nT", ng.get_template_tcb, "Ng: Get template typecheck block")
 
 
--- Git: Leader->g...
+-- Git: Leader -> g
 keymap("<leader>gk", "<cmd>DiffviewOpen<cr>", "Diffview: Open diffview")
 keymap("<leader>gj", "<cmd>DiffviewClose<cr>", "Diffview: Close diffview")
 keymap("<leader>gb", "<cmd>Gitsigns blame<cr>", "Gitsigns: Show gitblame")
@@ -77,21 +77,29 @@ keymap("<leader>gg", "<cmd>CopilotChatToggle<cr>", "Copilot: Open chat")
 vim.api.nvim_set_keymap('i', '<S-Tab>', "copilot#Accept('<CR>')", { expr = true, silent = true })
 
 
--- Diagnostics: Leader->a...
+-- Diagnostics: Leader -> a
 keymap("<leader>aa", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Diagnostic: Show actions")
 keymap("<leader>ad", "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostic: Show diagnostics")
 keymap("<leader>aj", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Diagnostic: Go to next")
 keymap("<leader>ak", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Diagnostic: Go to previous")
 
--- Telescope: Leader->f...
-keymap("<leader>ff", builtin.find_files, "Telescope: Find files")
-keymap("<leader>fg", builtin.live_grep, "Telescope: Live grep")
-keymap("<leader>fb", builtin.buffers, "Telescope: Buffers")
-keymap("<leader>fh", builtin.help_tags, "Telescope: Help tags")
-keymap("<leader>fv", builtin.git_status, "Telescope: Git status")
-keymap("<leader>fr", builtin.lsp_references, "Telescope: Function references")
-keymap("gr", builtin.lsp_references, "Telescope: Function references")
-keymap("<leader>fk", builtin.keymaps, "Telescope: Nvim keymaps")
-keymap("<leader>fs", builtin.grep_string, "Telescope: Selected word")
-keymap("<leader>fp", builtin.registers, "Telescope: Registers")
+-- Telescope: Leader -> f
+keymap("<leader>ff", telescope.find_files, "Telescope: Find files")
+keymap("<leader>fg", telescope.live_grep, "Telescope: Live grep")
+keymap("<leader>fb", telescope.buffers, "Telescope: Buffers")
+keymap("<leader>fh", telescope.help_tags, "Telescope: Help tags")
+keymap("<leader>fv", telescope.git_status, "Telescope: Git status")
+keymap("<leader>fr", telescope.lsp_references, "Telescope: Function references")
+keymap("gr", telescope.lsp_references, "Telescope: Function references")
+keymap("<leader>fk", telescope.keymaps, "Telescope: Nvim keymaps")
+keymap("<leader>fs", telescope.grep_string, "Telescope: Selected word")
+keymap("<leader>fp", telescope.registers, "Telescope: Registers")
+keymap("<leader>fo", ":ObsidianSearch<CR>", "Telescope: Search Telescope")
+
+-- Obsidian: Leader -> o 
+keymap("<leader>od", ":ObsidianDailies -5 2<CR>", "Obsidian: Open Dailies")
+keymap("<leader>on", ":ObsidianNew<CR>", "Obsidian: New Note")
+keymap("<leader>os", ":ObsidianSearch<CR>", "Obsidian: Search")
+keymap("<leader>ot", ":ObsidianTags<CR>", "Obsidian: Tags")
+keymap("<leader>ow", ":ObsidianWorkspace<CR>", "Obsidian: Workspace")
 

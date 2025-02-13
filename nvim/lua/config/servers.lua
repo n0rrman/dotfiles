@@ -87,6 +87,8 @@ return {
 			-- Python --
 			"pyright",
 			"pylsp",
+            -- Markdown --
+            "marksman",
 		},
 		ignore_install = {},
 	},

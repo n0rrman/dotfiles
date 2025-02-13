@@ -1,18 +1,21 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
-  lazy = true,
-  ft = "markdown",
+  event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
   },
   opts = {
     workspaces = {
       {
         name = "work",
         path = "~/Documents/Obsidian/work",
+      },
+    },
+    ui = {
+      checkboxes = {
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
       },
     },
   },
