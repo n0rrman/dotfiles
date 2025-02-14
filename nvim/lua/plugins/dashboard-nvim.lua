@@ -4,28 +4,36 @@ return {
 	opts = {
 		theme = "hyper",
 		config = {
-			week_header = {
-				enable = true,
-			},
+            header = {
+                "",
+                "NVIM v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch,
+                "",
+            },
 			shortcut = {
-				{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+				{ desc = "󰊳 Update", group = "Special", action = "Lazy update", key = "u" },
 				{
 					icon = " ",
 					icon_hl = "@variable",
 					desc = "Files",
-					group = "Label",
+					group = "DiagnosticInfo",
 					action = "Telescope find_files",
 					key = "f",
 				},
 				{
-					desc = " Obsidian",
-					group = "DiagnosticHint",
+					desc = "󰟘 Obsidian Vault",
+					group = "CmpItemKindInterface",
 					action = "ObsidianWorkspace",
+					key = "w",
+				},
+				{
+					desc = " Obsidian Notes",
+					group = "Number",
+					action = "ObsidianSearch",
 					key = "o",
 				},
 				{
 					desc = " dotfiles",
-					group = "Number",
+					group = "Variable",
 					action = "Telescope find_files hidden=true cwd=~/.dotfiles",
 					key = "d",
 				},
