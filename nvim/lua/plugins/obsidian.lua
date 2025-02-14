@@ -11,10 +11,6 @@ return {
         name = "main",
         path = "~/Obsidian/main",
       },
-      {
-        name = "work",
-        path = "~/Obsidian/work",
-      },
     },
     ui = {
       checkboxes = {
@@ -22,11 +18,14 @@ return {
         ["x"] = { char = "", hl_group = "ObsidianDone" },
       },
     },
-     templates = {
-        folder = "templates",
+    templates = {
+        folder = "template",
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
         substitutions = {},
-      },
+    },
+    daily_notes = {
+        folder = "daily",
+    }
   },
 }

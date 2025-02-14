@@ -20,10 +20,10 @@ return {
 					key = "f",
 				},
 				{
-					desc = "󰟘 Obsidian Vault",
+					desc = " Obsidian Today",
 					group = "CmpItemKindInterface",
-					action = "ObsidianWorkspace",
-					key = "w",
+					action = "ObsidianToday",
+					key = "t",
 				},
 				{
 					desc = " Obsidian Notes",
